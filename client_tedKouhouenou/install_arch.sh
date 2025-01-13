@@ -5,6 +5,7 @@ echo "The 15G size who is in pdf project is a mistake for me because 15 Go (root
 echo -e "\e[33;1mPlease enter : \"n\", \"p\", enter, enter, \"+21G\" and \"w\"\e[0m"
 fdisk /dev/sda
 timedatectl
+pacman -Sy wget
 pvcreate /dev/sda1
 vgcreate vg1 /dev/sda1
 lvcreate -L 400M -n boot vg1
@@ -24,7 +25,7 @@ mount /dev/vg1/boot /mnt/boot
 reflector --country France --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 pacstrap -K /mnt base linux linux-firmware networkmanager nano emacs zsh lvm2 grub lightdm lightdm-gtk-greeter xorg iw wpa_supplicant dialog sudo kdb openssh plasma plasma-workspace kde-applications
 genfstab -U /mnt >> /mnt/etc/fstab
-curl -o /mnt/arch_settinger.sh  https://github.com/Tednoob17/gamut/arch_settinger.sh
+wget -O /mnt/arch_settinger.sh  https://github.com/Tednoob17/gamut/raw/refs/heads/main/client_tedKouhouenou/arch_settinger.sh
 chmod +x /mnt/arch_settinger.sh
 echo -e "\e[34;1mInstallation ended\e[0m"
-echo -e "\e[34;1mPlease execute \"arch-chroot /mnt /bin/bash\" and after execute \"./arch_settings.sh\"\e[0m"
+echo -e "\e[34;1mPlease execute \"arch-chroot /mnt /bin/bash\" and after execute \"/mnt/arch_settinger.sh\"\e[0m"
