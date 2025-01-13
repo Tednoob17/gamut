@@ -22,7 +22,7 @@ mkdir /mnt/home
 mkdir /mnt/boot
 mount /dev/vg1/home /mnt/home
 mount /dev/vg1/boot /mnt/boot
-reflector --country France --age 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country France --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 pacstrap -K /mnt base linux linux-firmware networkmanager nano emacs zsh lvm2 grub lightdm lightdm-gtk-greeter xorg iw wpa_supplicant dialog sudo kdb openssh plasma plasma-workspace kde-applications
 genfstab -U /mnt >> /mnt/etc/fstab
 wget -O /mnt/arch_settinger.sh  https://github.com/Tednoob17/gamut/raw/refs/heads/main/client_tedKouhouenou/arch_settinger.sh
