@@ -5,7 +5,7 @@ echo "The 15G size who is in pdf project is a mistake for me because 15 Go (root
 echo -e "\e[33;1mPlease enter : \"n\", \"p\", enter, enter, \"+21G\" and \"w\"\e[0m"
 fdisk /dev/sda
 timedatectl
-pacman -Sy wget
+pacman -Sy wget, emacs-nox
 pvcreate /dev/sda1
 vgcreate vg1 /dev/sda1
 lvcreate -L 400M -n boot vg1
