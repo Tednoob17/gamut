@@ -23,9 +23,10 @@ mkdir /mnt/boot
 mount /dev/vg1/home /mnt/home
 mount /dev/vg1/boot /mnt/boot
 reflector --country France --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-pacstrap -K /mnt base linux linux-firmware networkmanager nano emacs zsh lvm2 grub lightdm lightdm-gtk-greeter xorg iw wpa_supplicant dialog sudo kdb openssh plasma plasma-workspace kde-applications
+pacstrap -K /mnt base linux linux-firmware networkmanager nano emacs zsh lvm2 gselect 
+rub lightdm lightdm-gtk-greeter xorg iw wpa_supplicant dialog sudo kdb openssh plasma plasma-workspace kde-applications
 genfstab -U /mnt >> /mnt/etc/fstab
-wget -O /mnt/arch_settinger.sh  https://github.com/Tednoob17/gamut/raw/refs/heads/main/client_tedKouhouenou/arch_settinger.sh
+wget  -O /mnt/arch_settinger.sh  https://github.com/Tednoob17/gamut/raw/refs/heads/main/client_tedKouhouenou/arch_settinger.sh
 chmod +x /mnt/arch_settinger.sh
 echo -e "\e[34;1mInstallation ended\e[0m"
 echo -e "\e[34;1mPlease execute \"arch-chroot /mnt /bin/bash\" and after execute \"/mnt/arch_settinger.sh\"\e[0m"
